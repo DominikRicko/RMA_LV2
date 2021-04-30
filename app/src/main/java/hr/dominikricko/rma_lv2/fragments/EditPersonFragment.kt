@@ -64,7 +64,7 @@ class EditPersonFragment : Fragment() {
                 binding.etDescription.setText(person.description)
                 binding.etDateBirth.setText(person.dateOfBirth)
                 binding.etDateDeath.setText(person.dateOfDeath)
-                
+
                 imageUri = person.imageUrl
                 person.quotes.forEach { TemporaryQuoteRepository.addQuote(it) }
 
@@ -102,7 +102,7 @@ class EditPersonFragment : Fragment() {
             if (this::person.isInitialized)
                 PeopleRepository.editPerson(newPerson, person)
             else
-                PeopleRepository.addNewPerson(person)
+                PeopleRepository.addNewPerson(newPerson)
 
             activity?.supportFragmentManager?.popBackStack()
 
